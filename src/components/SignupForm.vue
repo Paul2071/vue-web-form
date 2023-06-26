@@ -1,0 +1,50 @@
+<template>
+
+    <form>
+        <label> Email</label>
+        <input type="">
+    </form>
+
+</template>
+
+<script>
+
+export default {
+
+}
+
+</script>
+
+<style>
+form {
+    max-width: 420px;
+    margin: 30px auto;
+    background: white;
+    text-align: left;
+    padding: 40px;
+    border-radius: 10px;
+    border: #555;
+    border-width: 1px;
+    border-style: solid;
+  }
+  label {
+    color: #aaa;
+    display: inline-block;
+    margin: 25px 0 15px;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    
+   
+  }
+  input {
+    display: block;
+    padding: 10px 6px;
+    width: 100%;
+    box-sizing: border-box;   
+    color: #555;    
+    border-width: 1px;
+    border-style: solid;
+  }
+</style>
