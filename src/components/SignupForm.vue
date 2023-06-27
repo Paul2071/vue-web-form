@@ -1,16 +1,28 @@
 <template>
 
     <form>
-        <label> Email</label>
-        <input type="">
+        <label> Paint Name</label>
+        <input type="paint" required v-model="paint">
+
+        <label> Type of Paint</label>
+        <input type="type" required v-model="type">
     </form>
+
+    <p> {{ paint }}</p>
+    <p> {{ type }}</p>
 
 </template>
 
 <script>
 
 export default {
+  data () {
+    return {
 
+      paint: " ",
+      type: ""
+    }
+  }
 }
 
 </script>
