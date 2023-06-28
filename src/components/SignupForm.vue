@@ -6,10 +6,17 @@
 
         <label> Type of Paint</label>
         <input type="type" required v-model="type">
+
+        <label>Brand</label>
+        <select v-model="role">
+          <option value="citadel"> Citadel </option>
+          <option value="vallejo"> Vallejo </option>
+        </select>
     </form>
 
     <p> {{ paint }}</p>
     <p> {{ type }}</p>
+    <p> {{ role }}</p>
 
 </template>
 
@@ -20,7 +27,8 @@ export default {
     return {
 
       paint: " ",
-      type: ""
+      type: "",
+      role: ""
     }
   }
 }
