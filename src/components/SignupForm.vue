@@ -2,21 +2,28 @@
 
     <form>
         <label> Paint Name</label>
-        <input type="paint" required v-model="paint">
+        <input type="paint" required v-model="paint" >
 
-        <label> Type of Paint</label>
-        <input type="type" required v-model="type">
+        <label > Type of Paint</label>
+        <input type="type" required v-model="type" placeholder="Contrast / base / layer etc..." >
 
         <label>Brand</label>
-        <select v-model="role">
+        <select v-model="dropdown">
           <option value="citadel"> Citadel </option>
           <option value="vallejo"> Vallejo </option>
         </select>
+
+          <div class="terms">
+            <input type="checkbox" required>
+            <label>Accept T&Cs </label>
+
+          </div>
+
     </form>
 
     <p> {{ paint }}</p>
     <p> {{ type }}</p>
-    <p> {{ role }}</p>
+    <p> {{ dropdown }}</p>
 
 </template>
 
@@ -28,7 +35,7 @@ export default {
 
       paint: " ",
       type: "",
-      role: ""
+      dropdown: "citadel"
     }
   }
 }
@@ -58,7 +65,7 @@ form {
     
    
   }
-  input {
+  input, select {
     display: block;
     padding: 10px 6px;
     width: 100%;
@@ -67,4 +74,12 @@ form {
     border-width: 1px;
     border-style: solid;
   }
+  input[type="checkbox"]{
+    display: inline-block;
+    width: 16px;
+    margin: 0 10px, 0 0;
+    position: relative;
+    top: 2px;
+  }
+
 </style>
