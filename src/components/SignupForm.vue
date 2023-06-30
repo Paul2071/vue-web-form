@@ -14,9 +14,16 @@
         </select>
 
           <div class="terms">
-            <input type="checkbox" required>
+            <input type="checkbox" v-model="terms" required>
             <label>Accept T&Cs </label>
+            <p>Terms accepted: {{ terms }}</p>
+          </div>
 
+          <label>Skills</label>
+          <input type="text" v-model="tempSkill" @keyup.alt="addSkill" >
+          <div v-for="skill in skills" :key="skill" class="pill">
+            {{  skill  }}
+          
           </div>
 
     </form>
@@ -24,6 +31,7 @@
     <p> {{ paint }}</p>
     <p> {{ type }}</p>
     <p> {{ dropdown }}</p>
+   
 
 </template>
 
@@ -35,7 +43,25 @@ export default {
 
       paint: " ",
       type: "",
-      dropdown: "citadel"
+      dropdown: "citadel",
+      terms: false,
+      tempSkill: "",
+      skills: []
+      
+    }
+  },
+  methods: {
+    addSkill(e){
+      if(e.key === "," && this.tempSkill){
+        if(!this.skills.includes(this.tempSkill)){
+
+       
+
+          this.skills.push(this.tempSkill)
+        }
+
+        this.tempSkill=""
+      }
     }
   }
 }
