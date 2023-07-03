@@ -25,6 +25,10 @@
             <span @click="onClick(skill)"> {{  skill  }}  </span>        
           </div>
 
+          <div class="button">
+            <button>create</button>
+          </div>
+
     </form>
 
     <p> {{ paint }}</p>
@@ -122,7 +126,17 @@ form {
     font-weight: bold;
     color: #777;
     cursor: pointer;
-
+  }
+  button {
+    background: #0b6dff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: aliceblue;
+    border-radius: 20px;
+  }
+  .submit {
+    text-align: center;
   }
 
 </style>
