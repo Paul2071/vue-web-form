@@ -1,6 +1,6 @@
 <template>
 
-    <form>
+    <form @submit.prevent="handleSubmit">
         <label> Paint Name</label>
         <input type="paint" required v-model="paint" >
 
@@ -66,11 +66,16 @@ export default {
         this.tempSkill=""
       }
     },
+
     onClick (skill) {
       this.skills = this.skills.filter((item) => {
         return skill !== item
       })
+    },
+    handleSubmit() {
+      console.log("eeee")
     }
+   
   }
 }
 
