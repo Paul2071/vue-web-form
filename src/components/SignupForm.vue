@@ -6,6 +6,9 @@
 
         <label > Type of Paint</label>
         <input type="type" required v-model="type" placeholder="Contrast / base / layer etc..." >
+        <div>
+          {{ typeError }}
+        </div>
 
         <label>Brand</label>
         <select v-model="dropdown">
@@ -46,10 +49,12 @@ export default {
 
       paint: " ",
       type: "",
+      typeOptions:["contrast", "base", "layer"],
       dropdown: "citadel",
       terms: false,
       tempSkill: "",
-      skills: []
+      skills: [],
+      typeError: ""
       
     }
   },
@@ -73,7 +78,19 @@ export default {
       })
     },
     handleSubmit() {
-      console.log("eeee")
+     
+      if ( this.type === this.typeOptions[0]  ) {
+        this.typeError = "type accepted"
+      } else if ( this.type === this.typeOptions[1]  ) {
+        this.typeError = "type accepted"
+      } else if ( this.type === this.typeOptions[2]  ) {
+        this.typeError = "type accepted"
+      }  
+      
+      else {
+        this.typeError = "Not valid type"
+      }
+
     }
    
   }
