@@ -6,7 +6,7 @@
 
         <label > Type of Paint</label>
         <input type="type" required v-model="type" placeholder="Contrast / base / layer etc..." >
-        <div>
+        <div v-if="typeError" class="error">
           {{ typeError }}
         </div>
 
@@ -160,5 +160,12 @@ form {
   .submit {
     text-align: center;
   }
+  .error {
+    color: #ff0062;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
 
 </style>
